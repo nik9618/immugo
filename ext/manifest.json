@@ -1,0 +1,44 @@
+{
+  "name": "ImmuGo!",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Make travellers aware of the vaccine they need",
+  "homepage_url": "https://www.immugo.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "page action demo",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "web_accessible_resources": [
+    "template/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.kayak.com/SNflightreservation*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.kayak.com/SNflightreservation*"
+      ],
+      "js": [
+        "src/inject/jquery.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}

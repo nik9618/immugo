@@ -1,0 +1,104 @@
+<link href="https://fonts.googleapis.com/css?family=Poppins:200" rel="stylesheet">
+<style>
+.main-container {}
+.section {
+	background-color:white;
+	padding: 30px;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: #e0e7ed;
+    box-shadow: 2px 2px 5px #e0e7ed;
+    border-width: 1px;
+}
+#h1-line {
+	font-family: 'Poppins', sans-serif;
+	font-size: 24pt;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+#h2-line {
+	font-family: 'Poppins', sans-serif;
+	font-size: 12pt;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+.d-line {
+	font-family: 'Poppins', sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+#flight-description {
+	width:100%;
+}
+#stay-well {
+	width:100%;
+}
+.selector-container {
+	text-align: center;
+}
+.condition {
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	border-style: solid;
+	border-color: blue;
+	border-radius: 20px;
+	border-width: 2px;
+	text-align: left;
+	margin: 8px;
+	cursor: pointer;
+}
+.condition:hover {
+	background-color: #dddddd;
+}
+.condition span{
+	color: #444;
+	display: inline-block;
+	padding-top: 9px;
+	padding-left: 18px;
+}
+.select-me-text {
+	margin: 10px;
+	font-size: 19px;
+	color: #666666;
+	display: inline-block;
+}
+</style>
+
+<div class="main-container">
+	<div class="section">
+		<img id="flight-description"/>
+	</div>
+	<div class="section">
+		<img id="stay-well"/>
+		<span class="select-me-text">Select all conditions what applies to you:</span>
+		<div class="selector-container">
+			<div class="condition">
+				<span>Traveling with Children</span>
+			</div>
+			<div class="condition">
+				<span>Chronic Disease</span>
+			</div>
+			<div class="condition">
+				<span>Cruise Ship</span>
+			</div>
+			<div class="condition">
+				<span>Extended Stay/Study Abroad</span>
+			</div>
+			<div class="condition">
+				<span>Immune-Compromised Travelers</span>
+			</div>
+			<div class="condition">
+				<span>Pregnant Women</span>
+			</div>
+			<div class="condition">
+				<span>Mission/Disaster Relief</span>
+			</div>
+			<div class="condition">
+				<span>Visiting Friends or Family</span>
+			</div>
+		</div>
+	</div>
+</div>
