@@ -66,12 +66,12 @@ function overrideBookButton() {
 	}, 100);
 }
 
-function openVideo() {
-	var typhoid = '<iframe width="400" height="300" src="https://www.powtoon.com/embed/dZdBrISu3dk/" frameborder="0"></iframe>';
-	var hepb = '<iframe width="1280" height="720" src="https://www.powtoon.com/embed/goPXptmcVeL/" frameborder="0"></iframe>';
-	var polio = '<iframe width="1280" height="720" src="https://www.powtoon.com/embed/gpaYVObOXgE/" frameborder="0"></iframe>';
-
-	$('.video-container').html(iframe);
+function openVideo(type) {
+	var iframe = {}
+	iframe['typhoid'] = '<iframe width="400" height="300" src="https://www.powtoon.com/embed/dZdBrISu3dk/" frameborder="0"></iframe>';
+	iframe['hepa'] = '<iframe width="400" height="300" src="https://www.powtoon.com/embed/goPXptmcVeL/" frameborder="0"></iframe>';
+	iframe['polio'] = '<iframe width="400" height="300" src="https://www.powtoon.com/embed/gpaYVObOXgE/" frameborder="0"></iframe>';
+	$('.video-container').html(iframe[type]);	
 	$('.video-container').show();
 }
 
@@ -162,6 +162,10 @@ function launchMainPage() {
 		$('.next-button').click(function() {
 			launchProviderListPage({});
 		});
+
+		$('.info-ico.typhoid').click(function() {openVideo('typhoid');});
+		$('.info-ico.polio').click(function() {openVideo('polio');});
+		$('.info-ico.hepa').click(function() {openVideo('hepa');});
 	});
 }
 
