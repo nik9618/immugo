@@ -37,6 +37,7 @@
 }
 .selector-container {
 	text-align: center;
+	margin-bottom:20px;
 }
 .condition {
 	display: inline-block;
@@ -47,7 +48,7 @@
 	border-radius: 20px;
 	border-width: 2px;
 	text-align: left;
-	margin: 8px;
+	margin: 7px;
 	cursor: pointer;
 }
 .condition:hover {
@@ -58,12 +59,90 @@
 	display: inline-block;
 	padding-top: 9px;
 	padding-left: 18px;
+	vertical-align: top;
 }
 .select-me-text {
 	margin: 10px;
 	font-size: 19px;
 	color: #666666;
 	display: inline-block;
+}
+.condition.selected {
+	background-color: blue;
+}
+.condition span.selected{
+	color: white !important;
+	padding-left: 5px;
+}
+.checkmark {
+	display:inline-block;
+	width: 30px;
+	height: 30px;
+}
+.ok {
+	display: inline-block;
+    width: 30px;
+    vertical-align: top;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.personalize-text {
+	margin: 10px;
+	font-size: 21px;
+	color: #004BFF;
+	display: inline-block;
+}
+.vaccine-container {
+	margin-bottom:20px;
+}
+.vaccine {
+	width: 350px;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.syringe {
+	width: 30px;
+    vertical-align: top;
+}
+.right-side {
+    vertical-align: top;
+    width: 300px;
+    display: inline-block;
+    padding-left: 10px;
+}
+.right-side .head {
+	font-size: 14pt;
+    margin-bottom: 7px;
+    display: inline-block;
+    color: #444444;
+}
+.right-side .desc {
+	font-size: 11pt;
+	color: #444444;
+}
+.submit-line {
+    text-align: right;
+    height: 50px;
+    vertical-align: middle;
+}
+.price {
+    vertical-align: middle;
+    height: 100%;
+    padding-top: 14px;
+    display: inline-block;
+    color: #444444;
+    padding-right: 15px;    
+}
+.next-button{
+    border-radius: 10px;
+    background-color: #004BFF;
+    width: 130px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    height: 100%;
+    padding-top: 16px;
 }
 </style>
 
@@ -75,8 +154,9 @@
 		<img id="stay-well"/>
 		<span class="select-me-text">Select all conditions what applies to you:</span>
 		<div class="selector-container">
-			<div class="condition">
-				<span>Traveling with Children</span>
+			<div class="condition selected">
+				<img class="ok"/>
+				<span class="selected">Traveling with Children</span>
 			</div>
 			<div class="condition">
 				<span>Chronic Disease</span>
@@ -99,6 +179,48 @@
 			<div class="condition">
 				<span>Visiting Friends or Family</span>
 			</div>
+		</div>
+		<span class="personalize-text">Your personalized recommendation:</span>
+		<div class="vaccine-container">
+			<div class="vaccine">
+				<img class="syringe"/>
+				<div class="right-side">
+					<span class="head">Hepatitis B</span><br/>
+					<span class="desc">You can get hepatitis A through contaminated food or water, regardless of where you are eating or staying.</span>
+				</div>
+			</div>
+			<div class="vaccine">
+				<img class="syringe"/>
+				<div class="right-side">
+					<span class="head">Typhoid</span><br/>
+					<span class="desc">CDC recommends this vaccine for most travelers because you can get typhoid through contaminated food or water. </span>
+				</div>
+			</div>
+			<div class="vaccine">
+				<img class="syringe"/>
+				<div class="right-side">
+					<span class="head">Polio</span><br/>
+					<span class="desc">If you were vaccinated against polio as a child but have never had a polio booster dose as an adult, you should get this booster dose.</span>
+				</div>
+			</div>
+			<div class="vaccine">
+				<img class="syringe"/>
+				<div class="right-side">
+					<span class="head">Malaria</span><br/>
+					<span class="desc">You will need to take prescription medicine before, during, and after your trip to prevent malaria.</span>
+				</div>
+			</div>
+			<div class="vaccine">
+				<img class="syringe"/>
+				<div class="right-side">
+					<span class="head">Yellow fever</span><br/>
+					<span class="desc">Yellow fever is a risk in this country, so CDC recommends this vaccine for all travelers who are 9 months of age or older.</span>
+				</div>
+			</div>
+		</div>
+		<div class="submit-line">
+			<span class="price">As low as $320</span>
+			<span class="next-button">View Options</span>
 		</div>
 	</div>
 </div>

@@ -35,5 +35,7 @@ function launchMainPage(params) {
 		$($.parseHTML(data)).appendTo('.col-main');
 		$('#flight-description').attr('src', chrome.extension.getURL('template/flight-detail.png'));
 		$('#stay-well').attr('src', chrome.extension.getURL('template/stay-well.png'));
+		$('.syringe').attr('src', chrome.extension.getURL('template/syringe.png'));
+		$('.ok').attr('src', chrome.extension.getURL('template/ok.png'));
 	});
 }
