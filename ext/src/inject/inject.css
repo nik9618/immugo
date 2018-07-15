@@ -44,8 +44,31 @@ input.immugo-search {
   width: 100%;
 }
 
+img.immugo-powered-by {
+  float: right;
+  height: 35px;
+  width: auto;
+}
+
 h1,h2,h3,h4 {
   font-weight: 700 !important;
+}
+
+h1.immugo-header,
+h2.immugo-header,
+h3.immugo-header,
+h4.immugo-header {
+
+  color: #004BFF !important;
+
+}
+
+h2.immugo-section-header {
+  color: #004BFF !important;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  min-height: 90px;
 }
 
 strong {

@@ -7,6 +7,11 @@ var templates = {
 }
 
 var images = {
+	poweredByImmugo: chrome.extension.getURL('images/powered-by.png'),
+	planeBg: chrome.extension.getURL('images/plane-bg.png'),
+	healthTips: {
+		th: chrome.extension.getURL('images/health-tips-th.png')
+	},
 	kayakHeader: chrome.extension.getURL('images/kayak-header.png'),
 	kayakFooter: chrome.extension.getURL('images/kayak-footer.png')
 }
@@ -60,11 +65,18 @@ function launchMainPage(params) {
 		$('.col-main').empty();
 	    $('.col-rr').empty();
 	    $('.Checkout-Common-Title-BannerTitle h1').html("Trip > Booking receipts > KUSW-292905");
-		$($.parseHTML(data)).appendTo('.col-main');
+		const $immugoMain = $($.parseHTML(data))
+		$immugoMain.appendTo('.col-main');
+
+		$('.health-tips').append(createSectionHeader('Stay well during your trip to Thailand'))
 		$('#flight-description').attr('src', chrome.extension.getURL('template/flight-detail.png'));
-		$('#stay-well').attr('src', chrome.extension.getURL('template/stay-well.png'));
+		$('#stay-well').attr('src', images.healthTips.th);
 		$('.syringe').attr('src', chrome.extension.getURL('template/syringe.png'));
 		$('.ok').attr('src', chrome.extension.getURL('template/ok.png'));
+
+		$('.next-button').click(function() {
+			launchProviderListPage({})
+		});
 	});
 }
 
@@ -74,11 +86,23 @@ function launchProviderListPage(params) {
 	  $('.col-rr').empty();
 	  $('.Checkout-Common-Title-BannerTitle h1').html("Trip > Booking receipts > KUSW-292905");
 		$($.parseHTML(data)).appendTo('.col-main');
-
 		$('.provider-list').append(createProviderListItem(providers[0]))
 		$('.provider-list').append(createProviderListItem(providers[1]))
 		$('.provider-list').append(createProviderListItem(providers[2]))
 	});
+}
+
+function createSectionHeader(headerText) {
+	var $header = $('<div></div>')
+	$header.append('<img src="' + images.poweredByImmugo + '" class="immugo-powered-by" />')
+	$header.append('<h2 class="immugo-section-header" style="background-image:url(\'' + images.planeBg + '\'); margin-top: 0;">' + 
+										headerText + 
+									'</h2>')
+	return $header
+}
+
+function createTravelTipsSection() {
+	
 }
 
 function createProviderListItem(data) {
@@ -87,7 +111,7 @@ function createProviderListItem(data) {
 	var $col2 = $('<div class="immugo-col immugo-col-30" style="text-align: right;"></div>')
 	var $button = $('<button class="immugo-button">Details</button>')
 	$button.click(function() {
-		window.open(data.link, )
+		window.open(data.link)
 	})
 	$col1.append('<strong>' + data.name  + '</strong>')
 	$col1.append('<address>' + data.address + '</address>')
